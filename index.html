@@ -78,6 +78,36 @@
       border-radius: var(--radius);
       box-shadow: 0 10px 20px rgba(0,0,0,0.05);
       text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .intro {
+      background: none;
+    }
+
+    .intro::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url('photo_2025-07-11_15-58-59.jpg');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.3;
+      z-index: 0;
+    }
+
+    .intro > * {
+      position: relative;
+      z-index: 1;
+      background: rgba(255, 255, 255, 0.8);
+      margin: 10px auto;
+      padding: 20px;
+      border-radius: var(--radius);
+      max-width: 90%;
     }
 
     h2 {
@@ -94,6 +124,7 @@
       position: relative;
       width: 300px;
       margin: 40px auto;
+      height: 400px;
     }
 
     .slideshow img {
@@ -201,7 +232,6 @@
       У своїй роботі я поєдную любов до мови, сучасні методики та дружню атмосферу.  
       Зі мною навчання — це цікаво, ефективно та з посмішкою! 😊
     </p>
-
     <div class="slideshow">
       <img src="photo_2025-07-11_15-58-59.jpg" class="active" alt="Оля 1">
       <img src="photo_2025-07-11_15-59-07.jpg" alt="Оля 2">
@@ -256,8 +286,9 @@
       slides[current].classList.remove('active');
       current = (current + 1) % slides.length;
       slides[current].classList.add('active');
-    }, 1000);
+    }, 2000);
   </script>
 
 </body>
 </html>
+
